@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter the Code</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: url('pictures/Fugal\ Gateway\ 2.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+        .container {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 8px;
+            display: inline-block;
+        }
+        .number-pad {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px;
+            font-size: 20px;
+            border-radius: 5px;
+            background-color: #02891b;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #02891b;
+        }
+        #userCode {
+            font-size: 16px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Code Verification</h1>
+        <input type="text" id="userCode" readonly placeholder="Enter Code Here">
+        <div class="number-pad">
+            <button onclick="numPress('1')">1</button>
+            <button onclick="numPress('2')">2</button>
+            <button onclick="numPress('3')">3</button>
+            <button onclick="numPress('4')">4</button>
+            <button onclick="numPress('5')">5</button>
+            <button onclick="numPress('6')">6</button>
+            <button onclick="numPress('7')">7</button>
+            <button onclick="numPress('8')">8</button>
+            <button onclick="numPress('9')">9</button>
+            <button onclick="numPress('0')" style="grid-column: span 3;">0</button>
+        </div>
+        <button onclick="verifyCode()">Submit</button>
+        <button onclick="clearCode()">Clear</button>
+        <p id="feedback"></p>
+    </div>
+    <script>
+        let attempt = 0; // Initialize the attempt counter
+
+        function numPress(num) {
+            var input = document.getElementById('userCode');
+            input.value = input.value + num; // Append the pressed number to the input field
+        }
+
+        function clearCode() {
+            document.getElementById('userCode').value = ''; // Clear the input field
+        }
+
+        function verifyCode() {
+            var code = document.getElementById('userCode').value;
+            if(code === "1477283") {
+                document.getElementById('feedback').innerText = "Correct code! Proceeding to next level...";
+                setTimeout(function() {
+                    window.location.href = 'next_challenge.html'; // Redirect to the next part of the escape room
+                }, 2000);
+            } else {
+                attempt++; // Increment the attempt counter
+                if (attempt >= 3) {
+                    document.getElementById('feedback').innerText = "Incorrect code, try again. Here's a hint: Go find the ERR CODE on the last page.";
+                } else {
+                    document.getElementById('feedback').innerText = "Incorrect code, try again.";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

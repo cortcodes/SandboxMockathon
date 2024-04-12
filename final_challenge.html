@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Challenge - Morse Code Decoder</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: url('pictures/LA\ uvu.jpeg') no-repeat center center fixed; 
+            background-size: cover;
+            color: white;
+        }
+        .container {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+            display: inline-block;
+        }
+        input, button {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #02891b;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #02891b;
+        }
+        #morseCode {
+            font-size: 18px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Final Boss - Morse Code AI</h1>
+        <p id="morseCode">... .- -. -.. -... --- -..-</p>
+        <p>Decode the above Morse code and type your answer below and I will let you pass:</p>
+        <input type="text" id="answer" placeholder="Enter decoded message">
+        <button onclick="checkAnswer()">Submit</button>
+        <p id="feedback"></p>
+    </div>
+    <script>
+        function checkAnswer() {
+            var userAnswer = document.getElementById('answer').value.toLowerCase().trim();
+            var correctAnswer = "sandbox"; // the decoded message from the Morse code provided
+            if(userAnswer === correctAnswer) {
+                document.getElementById('feedback').innerText = "Correct! Congratulations, you've escaped UVU the clutches of the evil AI!";
+                // Optionally redirect or offer a completion certificate/download/etc.
+            } else {
+                document.getElementById('feedback').innerText = "Incorrect, please try again.";
+            }
+        }
+    </script>
+</body>
+</html>

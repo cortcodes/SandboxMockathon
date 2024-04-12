@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riddle Challenge</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: url('pictures/Pope\ Science.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+        .container {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+            display: inline-block;
+        }
+        input, button {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #02891b;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #02891b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>You encounter another AI and he seems to like riddles</h1>
+        <p>AI BOT 4231: I will let you pass if you solve this riddle... "I may not be found where I'm named, though I'm known for my might and my fury. I roam in the cold, but here I am bold, in a place where the students all scurry. What am I?"</p>
+        <input type="text" id="answer" placeholder="Enter your answer here">
+        <button onclick="checkAnswer()">Submit</button>
+        <p id="feedback"></p>
+    </div>
+    <script>
+        function checkAnswer() {
+            var userAnswer = document.getElementById('answer').value.toLowerCase();
+            if(userAnswer === "wolverine") {
+                document.getElementById('feedback').innerText = "Correct! You may proceed to the next challenge.";
+                setTimeout(function() {
+                    window.location.href = 'final_challenge.html'; // Redirect to the next challenge
+                }, 2000);
+            } else {
+                document.getElementById('feedback').innerText = "Incorrect, try again.";
+            }
+        }
+    </script>
+</body>
+</html>

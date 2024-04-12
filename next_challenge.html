@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Challenge</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: url('pictures/Hall\ of\ Flags.jpeg') no-repeat center center fixed; /* Update the image URL if needed */
+            background-size: cover;
+            color: white;
+        }
+        .container {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+            display: inline-block;
+        }
+        button {
+            display: block; /* Makes each button fill the line */
+            width: 80%; /* Adjust the width as necessary */
+            margin: 10px auto; /* Centers the button and adds space between */
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            background-color: #02891b;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #02891b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>You made it through to the Fugal Gateway.</h3>
+        <h3>OH NO YOU ENCOUNTER AN AI BOT</h3>
+        <h3>But it looks like he has something to say</h3>
+        <p>AI BOT 3423: I will only let you pass if you answer this question correctly...</p>
+        <p>How did Brandon Fugal make enough money to donate Fugal Gateway?</p>
+        <button onclick="checkAnswer('A')">A) Sold a medical device company for $68,000,000</button>
+        <button onclick="checkAnswer('B')">B) Worked hard in the commercial real estate industry</button>
+        <button onclick="checkAnswer('C')">C) Is a philanthropist who comes from generational wealth</button>
+        <button onclick="checkAnswer('D')">D) He is a world renowned neuro surgeon</button>
+        <p id="feedback"></p>
+    </div>
+    <script>
+        function checkAnswer(answer) {
+            if(answer === 'B') {
+                document.getElementById('feedback').innerText = "Correct answer! Proceeding to the next level...";
+                setTimeout(function() {
+                    window.location.href = 'next_challenge2.html'; // This should be the URL of your next game section
+                }, 2000);
+            } else {
+                document.getElementById('feedback').innerText = "Incorrect answer, try again.";
+            }
+        }
+    </script>
+</body>
+</html>

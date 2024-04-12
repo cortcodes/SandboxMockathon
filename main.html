@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seth's Escape</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: url('pictures/SethFace.jpeg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        h1 {
+            margin-top: 50px;
+            color: white;
+        }
+        p {
+            color: #ddd;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            background-color: #02891b;
+            color: white;
+            cursor: pointer;
+            outline: none; /* Remove default focus outline */
+        }
+        .button:hover, .button:focus {
+            background-color: #02891b; /* Also apply hover style on focus */
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Seth's Escape</h1>
+    <p>You and Seth are stuck in UVU. An evil AI has taken over the building and is after you guys. You must escape before it's too late!</p>
+    <button class="button" onclick="startGame()" aria-label="Start the escape room game, pay attention to the clue provided">
+      Start Escape
+    </button>
+    <script>
+        function startGame() {
+            alert('Game starts now! ERR CODE: 1477283'); // Enhanced message for clarity
+            window.location.href = 'next_page.html'; // Redirects to the next puzzle page
+        }
+    </script>
+</body>    
+</html>
